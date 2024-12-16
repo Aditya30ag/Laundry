@@ -32,4 +32,5 @@ const StudentsSchema = new Schema(
     }
   );
 const Students = mongoose.models.Students || mongoose.model("Students", StudentsSchema);
+Students.createIndexes();
 export default Students;
