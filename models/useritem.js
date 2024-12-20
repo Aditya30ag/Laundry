@@ -32,7 +32,17 @@ const userItemSchema = new mongoose.Schema({
     default: [],
     required: true,
   },
-});
+  isSubmitted: {
+    type: Boolean,
+    default: false,
+  },
+  submittedOn: {
+    type: Date,
+    default: null,
+  }
+}, {
+    timestamps: true
+  });
 
 // Prevent model overwrite during hot reloads
 const UserItem = mongoose.models.UserItem || mongoose.model("UserItem", userItemSchema);
